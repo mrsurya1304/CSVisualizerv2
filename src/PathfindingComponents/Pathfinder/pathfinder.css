@@ -1,0 +1,13 @@
+.grid {
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+.sorting-metrics{
+	align-items: center;
+    margin-left: 560px;
+}
+
+body{
+	background-color: rgb(210, 172, 156);
+}
