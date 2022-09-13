@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/CSVisualizerv2/static/css/main.6d6cc390.chunk.css",
+    "main.js": "/CSVisualizerv2/static/js/main.0cf130ca.chunk.js",
+    "main.js.map": "/CSVisualizerv2/static/js/main.0cf130ca.chunk.js.map",
+    "runtime-main.js": "/CSVisualizerv2/static/js/runtime-main.1eac2ebc.js",
+    "runtime-main.js.map": "/CSVisualizerv2/static/js/runtime-main.1eac2ebc.js.map",
+    "static/js/2.d23d6399.chunk.js": "/CSVisualizerv2/static/js/2.d23d6399.chunk.js",
+    "static/js/2.d23d6399.chunk.js.map": "/CSVisualizerv2/static/js/2.d23d6399.chunk.js.map",
+    "static/js/3.79f0883d.chunk.js": "/CSVisualizerv2/static/js/3.79f0883d.chunk.js",
+    "static/js/3.79f0883d.chunk.js.map": "/CSVisualizerv2/static/js/3.79f0883d.chunk.js.map",
+    "index.html": "/CSVisualizerv2/index.html",
+    "static/css/main.6d6cc390.chunk.css.map": "/CSVisualizerv2/static/css/main.6d6cc390.chunk.css.map",
+    "static/js/2.d23d6399.chunk.js.LICENSE.txt": "/CSVisualizerv2/static/js/2.d23d6399.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1eac2ebc.js",
+    "static/js/2.d23d6399.chunk.js",
+    "static/css/main.6d6cc390.chunk.css",
+    "static/js/main.0cf130ca.chunk.js"
+  ]
+}
