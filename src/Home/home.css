@@ -1,4 +1,17 @@
 .intro{
     margin-left: 400px;
     margin-right: 400px;
+    font-size: 20px;
+}
+button{
+    height: 30px;
+    width: 250px;
+    background-color: rgb(66, 65, 65);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color: rgb(120, 80, 1);
 }
