@@ -69,6 +69,9 @@ Mainly we use React states and components in this project
 - User manual displayed with a Popup
 
 ## How the app looks like
+![alt text](https://github.com/mrsurya1304/CSVisualizerv2/blob/main/samples/Sample1.png)
+![alt text](https://github.com/mrsurya1304/CSVisualizerv2/blob/main/samples/Sample2.png)
+![alt text](https://github.com/mrsurya1304/CSVisualizerv2/blob/main/samples/Sample3.png)
 
 ## Demo
 
