@@ -25,23 +25,23 @@ CSVisualizer loads up and will be ready to use Enjoy
 There are two topics with 2 algorithms each which have been developed and is ready for use
 
 ### Pathfinding Visualizer
-Consists of a grid of nodes with a start node and end node selected at random while loading
-Ability to draw walls by dragging mouse across nodes in a grid turning them into walls (black). During shortest path computation the path cant pass through walls
-Ability to reset grid which picks a new set of start and end node and erases any walls
-2 Algorithm buttons to compute shortest path
-- Dijkstra's Algorithm
-- A* algorithm
-We also have metrics like number of nodes visited and number of nodes in the shortest path
-There is also a button to clear grid which wipes out any shortest path computation so you can compare algorithms on the same start, end nodes and walls
+- Consists of a grid of nodes with a start node and end node selected at random while loading
+- Ability to draw walls by dragging mouse across nodes in a grid turning them into walls (black). During shortest path computation the path cant pass through walls
+- Ability to reset grid which picks a new set of start and end node and erases any walls
+- 2 Algorithm buttons to compute shortest path
+1. Dijkstra's Algorithm
+2. A* algorithm
+- We also have metrics like number of nodes visited and number of nodes in the shortest path
+- There is also a button to clear grid which wipes out any shortest path computation so you can compare algorithms on the same start, end nodes and walls
 
 ### Sorting Visualizer
-We have various bars of random sizes arranged next to each other which constitutes an array with random numbers. (The numbers may even be equal).
-There is a button to reset the array which gives another array of bars of random varying heights
-There are 2 algorithm buttons to sort the elements (bars) in ascending order
-- Bubble Sort
-- Mergesort
-There are metrics like number of comparisons and number of swaps which can be used to calculate complexity
-There is also a button to get original array which reverts the sorting operation to get the array you initially had which can be used to compare algorithms.
+- We have various bars of random sizes arranged next to each other which constitutes an array with random numbers. (The numbers may even be equal).
+- There is a button to reset the array which gives another array of bars of random varying heights
+- There are 2 algorithm buttons to sort the elements (bars) in ascending order
+1. Bubble Sort
+2. Mergesort
+- There are metrics like number of comparisons and number of swaps which can be used to calculate complexity
+- There is also a button to get original array which reverts the sorting operation to get the array you initially had which can be used to compare algorithms.
 
 ## Concepts used in CSVisualizer
 
