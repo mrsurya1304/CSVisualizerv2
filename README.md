@@ -24,6 +24,10 @@ Step 9: Type the command npm start to start the app
 CSVisualizer loads up and will be ready to use Enjoy
 
 ## How to use CSVisualizer
+- Entering the app you will be greeted with ah home page, a welcome message and various domains you may be interested in
+- You can click a domain (Example : Pathfinding algorithms) which leads you to a page consisting of prevelent algorithms from that domain which you may visualize
+- Each domain's page has a user manual to help you use the page and visualize algorithms
+- There may also be metrics calculated from the algorithm execution which you may use to compare the various algorithms and gain deeper insights on the subject you chose
 
 ## Features of CSVisualizer
 
