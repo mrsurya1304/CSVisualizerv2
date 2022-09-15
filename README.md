@@ -15,6 +15,6 @@
 
 ## Link to use CSVisualizer
 
-##Future ideas
+## Future ideas
 
-##Acknowledgements
+## Acknowledgements
