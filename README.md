@@ -1,6 +1,6 @@
 # CS Visualizer
 ## Description
-An algorithm visualizer made in React which attempts to show how various algorithms across Computer Science and related domains work internally. It brings in clarity of what an algorithm does internally using visualizations and animations. This project aims to help students struggling to understand how complex algorithms really work. 
+An algorithm visualizer made in React js which attempts to show how various algorithms across Computer Science and related domains work internally. It brings in clarity of what an algorithm does internally using visualizations and animations. This project aims to help students struggling to understand how complex algorithms really work. 
 
 ## How to run on a computer from Github
 Step 1: Create a folder in a path convinient to you
