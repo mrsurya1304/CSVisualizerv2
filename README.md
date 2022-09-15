@@ -44,6 +44,29 @@ There are two topics with 2 algorithms each which have been developed and is rea
 - There is also a button to get original array which reverts the sorting operation to get the array you initially had which can be used to compare algorithms.
 
 ## Concepts used in CSVisualizer
+Mainly we use React states and components in this project
+
+### Pathfinding Visualizer
+- 20x50 grid made with nodes (blocks) in CSS
+- Each node has properties (eg row number, column number, start or end node, wall node, visited node, shortest path node etc) all differentiated with different colors
+- Grid is cleared by removing some properties of nodes.
+- Random position picker for start and end nodes
+- Drawing walls with mouse events
+- Fix wall configuration button which fixes walls and gathers the results of the algorithm animations
+- Algorithm functions are written as wrapper functions in different React components
+- We get shortest path computation and shortest path as an array of animations
+- These animations are displayed with a timeout according to the index in the array using setTimeout()
+- Metrics are computed, stored and displayed using a table.
+- User manual displayed with a Popup
+
+### Sorting Visualizer
+- Load array with 180 bars (set according to screen size) of random heights by generating random integers within a range (5,550). 5 is chosen as lower bound so it is visible on the screen. 550 is chosen as the upper bound so it doesnt overshoot the screen.
+- Duplicate initial array created so we can revert the changes made while sorting to get the original array we started with.
+- Algorithm functions are written as wrapper functions in different React components
+- We get ascending order computation according to the chosen algorithm as an array of animations
+- These animations are displayed with a timeout according to the index in the array using setTimeout().
+- Metrics are computed, stored and displayed using a table.
+- User manual displayed with a Popup
 
 ## How the app looks like
 
