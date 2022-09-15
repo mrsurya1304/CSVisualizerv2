@@ -79,7 +79,10 @@ Mainly we use React states and components in this project
 Link: https://youtu.be/QAZ8Ga8qSb0
 
 ## Link to use CSVisualizer
-This project has been hosted on GitHub Pages. You can run this app on your browser 
+This project has been hosted on GitHub Pages. 
+
+You can run this app on your browser
+
 Link : https://mrsurya1304.github.io/CSVisualizerv2
 
 ## Future ideas
