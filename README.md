@@ -15,6 +15,8 @@ An algorithm visualizer made in React js which attempts to show how various algo
 
 CSVisualizer loads up and will be ready to use Enjoy
 
+Demo : https://youtu.be/mH0QRrmPZ5k
+
 ## How to use CSVisualizer
 - Entering the app you will be greeted with ah home page, a welcome message and various topics you may be interested in
 - You can click a topic (Example : Pathfinding algorithms) which leads you to a page consisting of prevelent algorithms from that topic which you may visualize
@@ -74,8 +76,11 @@ Mainly we use React states and components in this project
 ![alt text](https://github.com/mrsurya1304/CSVisualizerv2/blob/main/samples/Sample3.png)
 
 ## Demo
+Link: https://youtu.be/QAZ8Ga8qSb0
 
 ## Link to use CSVisualizer
+This project has been hosted on GitHub Pages. You can run this app on your browser 
+Link : https://mrsurya1304.github.io/CSVisualizerv2
 
 ## Future ideas
 
