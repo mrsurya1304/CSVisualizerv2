@@ -92,7 +92,7 @@ Link : https://mrsurya1304.github.io/CSVisualizerv2
 - Add a way for users to provide feedback and interact with the company team.
 
 ## Acknowledgements
-- But the implementation idea is heavily inspired by Clement Mihailescu who came up with the idea of algorithm visualization and implemented it using React
+- The implementation idea is heavily inspired by Clement Mihailescu who came up with the idea of algorithm visualization and implemented it using React
 - His Pathfinding Visualiser video: https://www.youtube.com/watch?v=msttfIHHkak
 - His Sorting Visualizer video: https://www.youtube.com/watch?v=pFXYym4Wbkc
 - I made this project my own by adding comparison metrics and the ability to compare algorithms. This helped me learn React and strengthen my knowledge on DSA 
