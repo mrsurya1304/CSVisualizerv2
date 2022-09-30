@@ -1,13 +1,28 @@
 .grid {
-	margin-top: 20px;
+	margin-top: 1vh;
 	font-size: 16px;
 }
 
-.sorting-metrics{
-	align-items: center;
-    margin-left: 560px;
+button{
+	height: 30px;
+	width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
+
+.sorting-metrics{
+	width: 50vw;
+	align-items: center;
+    margin-left: 10%;
+}
+
 
 body{
 	background-color: rgb(210, 172, 156);
+}
+
+.pathfindingpopup{
+	height: 70vh;
+	width:100%;
+	overflow: auto;
 }

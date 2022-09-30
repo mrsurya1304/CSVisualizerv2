@@ -9,6 +9,7 @@ const snc=randomint(0,49);
 const enr=randomint(0,19);  //Getting a random end node
 const enc=randomint(0,49);
 
+var allowwalls = true;
 var dijkstravisited= [];  //Dijkstras algorithm visited nodes and shortest path
 var dijkstrashortestpath = [];  
 var astarvisited = [];  //A* algorithm visited nodes and shortest path
@@ -28,7 +29,9 @@ export default class pathfinder extends Component {
     componentDidMount(){    //Setting grid and getting results of both algorithms after first load
         const grid = getgrid();
         this.setState({grid});
-        this.getresults(grid);
+        this.disablebutton('astar');
+        this.disablebutton('dijkstra');
+        this.disablebutton('clear');
     }
 
     getresults(grid){   //Method to run algorithms and get visited nodes and shortest path
@@ -40,6 +43,17 @@ export default class pathfinder extends Component {
         astarshortestpath = getnodesinshortestpath(endnode);
         dijkstravisited = dijkstra(grid,startnode,endnode);
         dijkstrashortestpath = getnodesinshortestpath(endnode);
+    }
+
+    fixwalls(){
+        const grid = this.state.grid;
+        this.getresults(grid);
+        allowwalls = false;
+        this.disablebutton('fix');
+
+        document.getElementById('astar').disabled = false;
+        document.getElementById('dijkstra').disabled = false;
+        document.getElementById('clear').disabled = false;
     }
 
     cleargrid() //Method to clear the grid (Doesnt clear the wall so algorithms can be compared fairly)
@@ -61,12 +75,14 @@ export default class pathfinder extends Component {
     }
 
     handlemousedown(row,col){   //Method to handle mouse click
-        const newgrid = gridwithwalltoggled(this.state.grid,row,col);
-        this.setState({grid: newgrid, mouseispressed: true});
+        if(allowwalls){
+            const newgrid = gridwithwalltoggled(this.state.grid,row,col);
+            this.setState({grid: newgrid, mouseispressed: true});
+        }
     }
 
     handlemouseenter(row,col){  //Method to draw wall when mouse is over a node
-        if(!this.state.mouseispressed) return;
+        if(!this.state.mouseispressed || !allowwalls) return;
         const newgrid = gridwithwalltoggled(this.state.grid,row,col);
         this.setState({grid: newgrid});
     }
@@ -86,13 +102,13 @@ export default class pathfinder extends Component {
             if(i=== visitednodesinorder.length-1){//After visited nodes in order animation
                 setTimeout(() => {  //Shortest path animation with timeout of 10 * index
                     this.animateshortestpath(nodesinshortestpath);
-                },10*i)
+                },20*i)
                 return;
             }
             setTimeout(() => {  //Visited nodes animation with timeout of 50 * index
                 const node=visitednodesinorder[i];
                 document.getElementById(`node-${node.row}-${node.col}`).className='node node-visited';
-            }, i*10);
+            }, i*20);
         }
     }
 
@@ -115,7 +131,7 @@ export default class pathfinder extends Component {
         document.getElementById('dijkstravisited').innerHTML = dijkstravisited.length-2;    //Setting no of nodes visited and no of nodes in shortest path onto the screen
         document.getElementById('sizeofpath').innerHTML = dijkstrashortestpath.length-2;
 
-        setTimeout(function () { document.getElementById("clear").disabled = false; }, ((dijkstravisited.length)*10+(dijkstrashortestpath.length)*50)); //Enabling the clear grid button after all animations
+        setTimeout(function () { document.getElementById("clear").disabled = false; }, ((dijkstravisited.length)*20+(dijkstrashortestpath.length)*50)); //Enabling the clear grid button after all animations
     }
 
     visualizeastar(){   //Method to visualize A* algorithm
@@ -129,7 +145,7 @@ export default class pathfinder extends Component {
         document.getElementById('astarvisited').innerHTML = astarvisited.length-2;  //Setting no of nodes visited and no of nodes in shortest path onto the screen
         document.getElementById('sizeofpath').innerHTML = astarshortestpath.length-2;
         
-        setTimeout(function () { document.getElementById("clear").disabled = false; }, ((astarvisited.length)*10+(astarshortestpath.length)*50));//Enabling the clear grid button after all animations
+        setTimeout(function () { document.getElementById("clear").disabled = false; }, ((astarvisited.length)*20+(astarshortestpath.length)*50));//Enabling the clear grid button after all animations
     }
 
     render(){
@@ -168,15 +184,16 @@ export default class pathfinder extends Component {
                 })}
             </div>
             <br></br>
-            <button id="dijkstra" onClick={() => this.visualizedijkstra()}>
+            <button id="fix" title="Fix walls" onClick={()=> this.fixwalls()}>Fix walls</button>
+            <button id="dijkstra" title="Dijkstra's Algorithm" onClick={() => this.visualizedijkstra()}>
                 Dijkstra's Algorithm
             </button>
-            <button id="astar" onClick={() => this.visualizeastar()}>
+            <button id="astar" title="A* Algorithm" onClick={() => this.visualizeastar()}>
                 A* Algorithm
             </button>
-            <button id="clear" onClick={this.cleargrid}>Clear grid</button>
-            <button id="reset" onClick={() => window.location.reload(false)}>Reset grid</button>
-            <button id="man" onClick={this.changestate}>User manual</button>
+            <button id="clear" title="Clear grid" onClick={this.cleargrid}>Clear grid</button>
+            <button id="reset" title="Reset grid" onClick={() => window.location.reload(false)}>Reset grid</button>
+            <button id="man" title="User manual" onClick={this.changestate}>User manual</button>
 
             <div className='sorting-metrics'>
                     <table cellPadding={10}>
@@ -191,6 +208,7 @@ export default class pathfinder extends Component {
                             <td id='astarvisited'></td><br/><br/>
                         </tr>
                         <tr>
+                            <th></th>
                             <td>Nodes in shortest path: </td>
                             <td id="sizeofpath"></td>
                         </tr>
@@ -199,17 +217,22 @@ export default class pathfinder extends Component {
 
             {this.state.popupstate ? //Popup for the user manual
             <Popup trigger={popupstate} handleclose = {this.changestate}>
+                <div className="pathfindingpopup">
                 <h2>Path finding visualizer tutorial</h2>
-                <p>Welcome, This is the path finding visualizer<br></br>
-                The start node is highlighted in green<br></br>
-                The end node is highlighted in red<br></br>
-                You have a button to reset the grid which generates random start and end nodes<br></br>
-                There is also a button to clear the grid which erases everything apart from the walls so you can compare algorithms<br/>
-                You have algorithm buttons when clicked tries to find the shortest path to the end node<br></br>
-                When clicked the nodes that the algorithm visits are colored brown<br></br>
-                The shortest path is colored yellow<br></br>
-                Observe and learn how each algorithm computes the shortest path<br></br>Enjoy
+                <p>Welcome, This is the path finding visualizer.<br></br>
+                The start node is highlighted in green.<br></br>
+                The end node is highlighted in red.<br></br>
+                You have a button to reset the grid which generates random start and end nodes.<br></br>
+                There is also a button to clear the grid which erases everything apart from the walls so you can compare algorithms.<br/>
+                You have the ability to draw walls which turns nodes black (optional).<br />
+                We cant pass through walls.<br />
+                Once you are done drawing the walls click the fix walls button to enable the algorithm buttons.<br />
+                You have algorithm buttons when clicked tries to find the shortest path to the end node.<br></br>
+                When clicked the nodes that the algorithm visits are colored brown.<br></br>
+                The shortest path is colored yellow.<br></br>
+                Observe and learn how each algorithm computes the shortest path.<br></br>Enjoy
                 </p>
+                </div>
             </Popup>
             :null}
             </>

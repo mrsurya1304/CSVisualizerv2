@@ -32,6 +32,7 @@ export function astar(grid, startnode, endnode){    //A* algorithm
     while(unvisitednodes.length!==0){
         unvisitednodes.sort((a,b)=> a.totaldistance - b.totaldistance); //Sorting unvisited nodes by distance
         let closestnode = unvisitednodes.shift(); //Getting the closest node
+        if(closestnode.iswall) continue;
         if(closestnode === endnode) return visitednodesinorder; //If the closest node is the end node we return the visited nodes
 
         closestnode.isvisited = true;   //We mark the closest node as visited

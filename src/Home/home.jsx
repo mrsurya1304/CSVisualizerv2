@@ -11,8 +11,8 @@ export default function Home(){ //Homepage
         give you a deeper insight into the world of algorithms.<br /> "A picture is worth a thousand words" 
         with that being said enjoy, learn and play around with our application <br></br>
       </p>
-      <button onClick={() => {history.push('/pathfinding')}}>Path finding visualizer</button>
-      <button onClick={() => {history.push('/sorting')}}>Sorting algorithm visualizer</button>
+      <button title="Path Finding Visualizer" onClick={() => {history.push('/pathfinding')}}>Path finding visualizer</button>
+      <button title="Sorting Visualizer" onClick={() => {history.push('/sorting')}}>Sorting visualizer</button>
 
       </div>
     )
